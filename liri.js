@@ -1,16 +1,29 @@
 require("dotenv").config();
 
+var request = require('request');
+
+const inquirer = require('inquirer')
+
 var keys = require("./keys");
 
 var Spotify = require('node-spotify-api');
  
 var spotify = new Spotify(keys.spotify); 
  
-// spotify.search({ type: 'track', query: 'All the Small Things' }, function(err, data) {
-//   if (err) {
-//     return console.log('Error occurred: ' + err);
-//   }
- 
-console.log("this is working!"); 
 
 
+// Prompts
+
+inquirer.prompt([
+    {
+        type: "list",
+        message: "What do you want to search for?",
+        name: "choices",
+        choices: ["spotify-this-song", "movie-this", "concert-this"]
+    }
+]).then(response => {
+    
+})
+
+
+// Functions 
