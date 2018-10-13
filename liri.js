@@ -59,7 +59,7 @@ params = songChoice;
         } else {
             console.log("Song Name: " + "'" + songChoice) 
             console.log( "Album: " + data.tracks.items[0].album.name)
-            console.log("Album: " + data.tracks.itesms[0].name)
+            console.log("Album: " + data.tracks.items[0].name)
             console.log( "PreviewURL" + data.tracs.items[0].album.artists[0].external_urls_spotify)
 
             // console.log("Song Name: " + JSON.parse(body).name + "\nArtists: " + JSON.parse(body).artists +
@@ -82,7 +82,7 @@ var movieName = "";
 
 
 function movieChoice(omdb) {
-    used own api key 
+    // used own api key 
     const apiKey = 'e3034019';
     var queryURL = "http://www.omdbapi.com/?i=" + movieName + "tt3896198&apikey=e3034019";
 
