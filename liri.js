@@ -13,30 +13,30 @@ var spotify = new Spotify(keys.spotify);
 
 // Prompts
 
-// inquirer.prompt([{
-//         type: "list",
-//         message: "What do you want to search for?",
-//         name: "choices",
-//         choices: ["spotify-this-song", "movie-this", "concert-this"]
-//     },
-//     {
-//         type: "input",
-//         message: "type name",
-//         name: "name"
-//     }
+inquirer.prompt([{
+        type: "list",
+        message: "What do you want to search for?",
+        name: "choices",
+        choices: ["spotify-this-song", "movie-this", "concert-this"]
+    },
+    {
+        type: "input",
+        message: "type name",
+        name: "name"
+    }
 
-// ]).then(response => {
-//     // add if/else statements to pull in the functions 
-//     if (response.choices === "spotify-this-song") {
-//         console.log("songChoice")
-//     }
-//     if (response.choices === "movie-this") {
-//         console.log(omdb)
-//     }
-//     if (response.choices === "concert-this") {
-//         console.log("fine")
-//     }
-// });
+]).then(response => {
+    // add if/else statements to pull in the functions 
+    if (response.choices === "spotify-this-song") {
+        console.log("songChoice")
+    }
+    if (response.choices === "movie-this") {
+        console.log("movieName")
+    }
+    if (response.choices === "concert-this") {
+        console.log("fine")
+    }
+});
 
 
 
@@ -45,7 +45,7 @@ var spotify = new Spotify(keys.spotify);
 
 // spotify 
 
-function songChoice(spotifySong) {
+function songChoice(song) {
 
 var songChoice = process.argv[3]; 
 
@@ -81,8 +81,8 @@ var nodeArgs = process.argv;
 var movieName = "";
 
 
-// function movieChoice(omdb) {
-    // used own api key 
+function movieChoice(omdb) {
+    used own api key 
     const apiKey = 'e3034019';
     var queryURL = "http://www.omdbapi.com/?i=" + movieName + "tt3896198&apikey=e3034019";
 
@@ -101,10 +101,15 @@ var movieName = "";
     })
 };
 
+// concert - still in progress 
+
+// var nodeArgs = process.argv; 
+
+// var concertChoice = ""; 
 
 // function concertChoice(bands) {
 //     // used api provided in instructions 
-//     const apiURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
+//     const apiURL = "https://rest.bandsintown.com/artists/" + concertChoice + "/events?app_id=codingbootcamp";
 
 //     request(apiURL, (error, response, body) => {
 //         if (!error && response.statusCode == 200) {
